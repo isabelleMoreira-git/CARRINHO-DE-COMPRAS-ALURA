@@ -1,8 +1,7 @@
-
 let totalGeral = 0;
+limpar()
 
 function adicionar(){
-
     let produto = document.getElementById('produto').value;
     let nomeProduto = produto.split('-')[0];
     let valorUnitario = produto.split('R$')[1];
@@ -19,17 +18,10 @@ function adicionar(){
     let campoTotal = document.getElementById("valor-total");
     campoTotal.textContent = `R$${totalGeral}`;
     document.getElementById('quantidade').value = 0;
-
 }
 
-function limpar(){
-    //Limpar carrinho carrinho
-    let carrinho = document.getElementById('lista-produtos');
-    carrinho.innerHTML =`<section class="carrinho__produtos__produto">
-    <span class="texto-azul"></span><span class="texto-azul"></span>
-  </section>`;
-
-    //atualizar o valor total
-    let campoTotal = document.getElementById("valor-total");
-    campoTotal.textContent = `R$ 0,00`
+function limpar() {
+    totalGeral = 0;
+    document.getElementById('lista-produtos').innerHTML = '';
+    document.getElementById('valor-total').textContent = 'R$ 0';
 }
